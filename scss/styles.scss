@@ -1,0 +1,35 @@
+@import "mtVars";
+@import "mixins";
+@import "form";
+@import "buttons";
+@import "visualization-svg-styles";
+
+html,body{
+	height: 100%;
+	margin-right:0;
+	perspective: 800px;
+}
+
+.mt-maker-form-wrapper{
+	@include mt-box-shadow(2);
+	transform:translate(-50%,-50%);
+	padding:20px;
+	position: absolute;
+	display: block;
+	top: 50%;
+	left: 50%;
+}
+
+.grommet-svg{
+	height:100%;
+}
+
+#grommet-visualization-window>svg{
+	border:solid 1px rgba(0,0,0,0.05);
+}
+
+#innerSpaceA,#innerSpaceB{
+	rect{
+		transform:translateY(-25%);
+	}
+}
