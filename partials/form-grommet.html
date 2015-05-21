@@ -1,0 +1,34 @@
+<div class="col-sm-6" id="visualization-window" viz-grommet>
+      
+</div>
+<form name="grommetForm" class="col-sm-6">
+  <div class="form-group">
+    <label for="inner-dimension">Inner Dimension (mm)</label>
+    <input type="number" class="form-control" id="innerDimension" ng-model="grommet.innerDimension" placeholder="Inner Dimension">
+  </div>
+  <div class="form-group">
+    <label for="outer-dimension">Outer Dimension (mm)</label>
+    <input type="number" class="form-control" id="outer-dimension" ng-model="grommet.outerDimension" placeholder="Outer Dimension">
+  </div>
+  <div class="form-group">
+    <label for="thickness">Thickness (mm)</label>
+    <input type="number" class="form-control" id="thickness" ng-model="grommet.thickness" placeholder="Thickness">
+  </div>
+  <div class="form-group">
+    <label for="material">Material</label>
+    <select name="material" id="material" class="form-control" ng-model="grommet.material" ng-options="material.name for material in materials">
+    </select>
+  </div>
+  <div class="form-group" id="timeNeededBlock">
+    <label for="timeNeeded" style="width:100%">Time Needed</label>
+    <input type="number" class="form-control col-xs-4" id="hours" placeholder="HH"><input type="number" class="form-control col-xs-4" id="minutes" placeholder="MM"><input type="number" class="form-control col-xs-4" id="seconds" placeholder="SS">
+    <input hidden class="duration" data-duration-hours="#hours" data-duration-minutes="#minutes" data-duration-seconds="#seconds" ng-model="grommet.timeNeeded"/>
+  </div>
+  <button type="submit" class="btn-primary" data-ng-click="submit(grommetForm)">MakeTime</button>
+
+<script type="text/javascript">
+    $(document).ready( function(){
+      $(".duration").durationEntry();
+    });
+</script>
+</form>

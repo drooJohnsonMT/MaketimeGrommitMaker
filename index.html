@@ -5,61 +5,37 @@
   <meta charset="UTF-8">
   <title ng-bind="pageTitle"></title>
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="css/styles.css">
-  <script src="bower_components/jQuery/dist/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="bower_components/angular/angular.min.js" type="text/javascript" charset="utf-8"></script>
-  
+  <link rel="stylesheet" type="text/css" href="css/styles.css">  <script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+
+  <script src="bower_components/angular/angular.min.js" type="text/javascript" charset="utf-8"></script>  
+  <script src="bower_components/angular-animate/angular-animate.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="bower_components/moment/min/moment.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/app/js/jquery-duration-entry.js" type="text/javascript" charset="utf-8"></script>
   <script src="/app/app.js" type="text/javascript" charset="utf-8"></script>
   <script src="/app/controllers/GrommetMakerCtrl.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/app/directives/configurator.js" type="text/javascript" charset="utf-8"></script>
+
 
 <body>
-  <div class="container mt-maker-form-wrapper">
-  <div class="row">
-  <div class="col-xs-12">
-    <h1>Grommet Wizard</h1>
-  </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-6" id="grommet-visualization-window">
-      <svg class="grommet-svg vis-svg" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-        <defs>
-          <mask id="innerSpaceA">
-            <rect width="500%" height="500%" fill="white"/>
-            <circle class="innerDimension" cx="50%" cy="{{50+(grommet.thickness/2)}}%" fill="#000000" r="{{grommet.innerDimension}}"/>
-          </mask>
-          <mask id="innerSpaceB">
-            <rect width="500%" height="500%" fill="white"/>
-            <circle class="innerDimension" cx="50%" cy="{{50-(grommet.thickness/2)}}%" fill="#000000" r="{{grommet.innerDimension}}"/>
-          </mask>
-        </defs>
-        <circle class="outerDimension" cx="50%" cy="{{50+(grommet.thickness/2)}}%" fill="{{grommet.material.colors[0]}}" r="{{grommet.outerDimension}}" mask="url(#innerSpaceA)"/>
-        <circle class="outerDimension" cx="50%" cy="{{50-(grommet.thickness/2)}}%" fill="{{grommet.material.colors[1]}}" r="{{grommet.outerDimension}}" mask="url(#innerSpaceB)"/>
-      </svg>
+  <div ng-show="messages" class="message-modal-bg">
+      <div class="message-modal-body"><p>
+        {{messages}}
+      </p><button class="btn-block btn-primary" ng-click="dismiss()">{{buttonText}}</button></div>
     </div>
-    <form class="col-sm-6">
-      <div class="form-group">
-        <label for="innerDimension">Inner Dimension</label>
-        <input type="number" class="form-control" id="innerDimension" ng-model="grommet.innerDimension" placeholder="Inner Dimension">
+  <div class="container mt-maker-form-wrapper">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>Grommet Wizard</h1>
       </div>
-      <div class="form-group">
-        <label for="outerDimension">Outer Dimension</label>
-        <input type="number" class="form-control" id="outerDimension" ng-model="grommet.outerDimension" placeholder="Outer Dimension">
-      </div>
-      <div class="form-group">
-        <label for="thickness">Thickness</label>
-        <input type="number" class="form-control" id="thickness" ng-model="grommet.thickness" placeholder="Thickness">
-      </div>
-      <div class="form-group">
-      <label for="material">Material</label>
-        <select name="material" id="material" class="form-control" ng-model="grommet.material" ng-options="material.name for material in materials">
-        </select>
-      </div>
-      <button type="submit" class="btn-primary">Submit</button>
-    </form>
+    </div>
+    <div class="row" id="configurator-form" form-grommet>
+      
     </div>
   </div>
 </body>
 
 <!-- TODO: ADD SIGNUP MODAL ON REQUEST FAILURE -->
-
+<footer>
+  
+</footer>
 </html>

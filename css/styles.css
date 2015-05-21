@@ -86,18 +86,26 @@ button.btn-lg {
       -ms-transform-origin: 50% 50%;
           transform-origin: 50% 50%; }
 
+.thickness {
+  -webkit-transition: all 0.1s linear;
+          transition: all 0.1s linear; }
+
 .vis-svg {
   background: -webkit-radial-gradient(center, ellipse, #FEFEFE 0%, #e6e6e6 100%);
-  background: radial-gradient(ellipse at center, #FEFEFE 0%, #e6e6e6 100%); }
+  background: radial-gradient(ellipse at center, #FEFEFE 0%, #e6e6e6 100%);
+  height: 100%;
+  border: solid 1px rgba(0, 0, 0, 0.05); }
 
 html, body {
   height: 100%;
-  margin-right: 0;
-  -webkit-perspective: 800px;
-          perspective: 800px; }
+  margin-right: 0; }
+
+body {
+  background-color: #e1e1e1; }
 
 .mt-maker-form-wrapper {
   box-shadow: 0 8px 10px -3.5px rgba(0, 0, 0, 0.2333333333);
+  background-color: white;
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -107,13 +115,44 @@ html, body {
   top: 50%;
   left: 50%; }
 
-.grommet-svg {
-  height: 100%; }
+input[type="number"] {
+  padding-right: 3px; }
 
-#grommet-visualization-window > svg {
-  border: solid 1px rgba(0, 0, 0, 0.05); }
+.form-group#timeNeededBlock input {
+  width: 33.3333333333%;
+  padding-left: 10px;
+  padding-right: 3px; }
 
-#innerSpaceA rect, #innerSpaceB rect {
-  -webkit-transform: translateY(-25%);
-      -ms-transform: translateY(-25%);
-          transform: translateY(-25%); }
+.message-modal-bg {
+  -webkit-transition: all 0.25s;
+          transition: all 0.25s;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.7); }
+
+.message-modal-body {
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 50%;
+  margin: auto;
+  z-index: 2000;
+  background-color: white;
+  box-shadow: 0 12px 15px -5.25px rgba(0, 0, 0, 0.2); }
+  .message-modal-body button {
+    margin-top: 20px;
+    margin-bottom: 0; }
+
+.message-modal-bg.ng-hide {
+  opacity: 0; }

@@ -15,3 +15,7 @@
   -webkit-transform-origin: 50% 50%;
       -ms-transform-origin: 50% 50%;
           transform-origin: 50% 50%; }
+
+.thickness {
+  -webkit-transition: all 0.1s linear;
+          transition: all 0.1s linear; }
