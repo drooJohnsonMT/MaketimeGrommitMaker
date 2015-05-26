@@ -17,7 +17,7 @@
 
 
 <body>
-  <div ng-show="messages" class="message-modal-bg">
+  <div ng-show="messages != null" class="message-modal-bg">
       <div class="message-modal-body"><p>
         {{messages}}
       </p><button class="btn-block btn-primary" ng-click="dismiss()">{{buttonText}}</button></div>
