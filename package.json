@@ -1,0 +1,27 @@
+{
+  "name": "MaketimeGrommitMaker",
+  "version": "0.0.1",
+  "description": "\"Basic API usage examples\"",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/drooJohnsonMT/MaketimeGrommitMaker.git"
+  },
+  "keywords": [
+    "MakeTime",
+    "API",
+    "Example"
+  ],
+  "author": "droo2 and the crew",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/drooJohnsonMT/MaketimeGrommitMaker/issues"
+  },
+  "homepage": "https://github.com/drooJohnsonMT/MaketimeGrommitMaker",
+  "dependencies": {
+    "express": "^4.12.4"
+  }
+}
